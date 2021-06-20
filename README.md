@@ -1,3 +1,8 @@
+Table of Contents
+=================
+* [Scripts](#Scripts)
+* [Script list](#Script-list)
+
 # Scripts
 In this repository I will store various scripts that I made for my Linux install.
 
