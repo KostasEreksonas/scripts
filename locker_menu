@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# __version__ = 0.1
+
 # Variables
 Locker=slock						# Put your screen locker utility there. In my case it is slock.
 Logout="pkill dwm"					# Put a command to logout from DE/WM session here.
