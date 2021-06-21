@@ -3,7 +3,7 @@
 # __version__ = 0.1
 
 # Variables
-Locker=slock						# Put your screen locker utility there. In my case it is slock.
+Locker="slock"						# Put your screen locker utility there. In my case it is slock.
 Logout="pkill dwm"					# Put a command to logout from DE/WM session here.
 Suspend="systemctl suspend"			# Put a command to suspend DE/WM session here.
 Hibernate="systemctl hibernate"		# Put a command to suspend DE/WM session here.
