@@ -12,7 +12,7 @@ Hibernate="systemctl hibernate"		# Put a command to suspend DE/WM session here.
 Reboot="reboot"						# Put a command to reboot a machine here.
 Shutdown="shutdown now"				# Put a command to shutdown a machine here.
 
-printf "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown\n"
+printf "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (S) shutdown\n"
 
 read key
 
