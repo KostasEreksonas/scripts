@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# __version__ = 0.1
+
+# Dependencies: slock, dwm, systemctl
+
+# Variables
+Locker="slock"						# Put your screen locker utility there. In my case it is slock.
+#Logout="pkill dwm"					# Put a command to logout from DE/WM session here.
+#Suspend="systemctl suspend"			# Put a command to suspend DE/WM session here.
+#Hibernate="systemctl hibernate"		# Put a command to suspend DE/WM session here.
+#Reboot="reboot"						# Put a command to reboot a machine here.
+#Shutdown="shutdown now"				# Put a command to shutdown a machine here.
+
+usage() { echo "Usage: $0 [-l <lock screen>] [-e <logout>] [-s <suspend>] [-h <hibernate>] [-r <reboot>] [-S <shutdown>]" 1>&2; exit 1; }
+
+while getopts ":l:e:s:h:r:S:" o; do
+	case "${o}" in
+		l)
+			l=${OPTARG}
+			$Locker
+			;;
+		e)
+			e=$Locker
+			;;
+		s)
+			s=$Locker
+			;;
+		h)
+			h=$Locker
+			;;
+		r)
+			r=$Locker
+			;;
+		S)
+			S=$Locker
+			;;
+		*)
+			usage
+			;;
+	esac
+done
+shift $((OPTIND-1))
+
+if [ -z "${l}" ] || [ -z "${e}" ] || [ -z "${s}" ] || [ -z "${h}" ] || [ -z "${r}" ] || [ -z "${S}" ]; then
+	usage
+fi
+
+echo "l = ${l}"
+echo "e = ${e}"
+echo "s = ${s}"
+echo "h = ${h}"
+echo "r = ${r}"
+echo "S = ${S}"
