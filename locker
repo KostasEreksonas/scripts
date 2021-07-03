@@ -6,11 +6,11 @@
 
 # Variables
 Locker="slock"						# Put your screen locker utility there. In my case it is slock.
-#Logout="pkill dwm"					# Put a command to logout from DE/WM session here.
-#Suspend="systemctl suspend"			# Put a command to suspend DE/WM session here.
-#Hibernate="systemctl hibernate"		# Put a command to suspend DE/WM session here.
-#Reboot="reboot"						# Put a command to reboot a machine here.
-#Shutdown="shutdown now"				# Put a command to shutdown a machine here.
+Logout="pkill dwm"					# Put a command to logout from DE/WM session here.
+Suspend="systemctl suspend"			# Put a command to suspend DE/WM session here.
+Hibernate="systemctl hibernate"		# Put a command to suspend DE/WM session here.
+Reboot="reboot"						# Put a command to reboot a machine here.
+Shutdown="shutdown now"				# Put a command to shutdown a machine here.
 
 usage() { echo "Usage: $0 [-l <lock screen>] [-e <logout>] [-s <suspend>] [-h <hibernate>] [-r <reboot>] [-S <shutdown>]" 1>&2; exit 1; }
 
@@ -22,23 +22,23 @@ while getopts ":leshrS" o; do
 			;;
 		e)
 			e=${OPTARG}
-			$Locker
+			$Logout
 			;;
 		s)
 			s=${OPTARG}
-			$Locker
+			$Suspend
 			;;
 		h)
 			h=${OPTARG}
-			$Locker
+			$Hibernate
 			;;
 		r)
 			r=${OPTARG}
-			$Locker
+			$Reboot
 			;;
 		S)
 			S=${OPTARG}
-			$Locker
+			$Shutdown
 			;;
 	esac
 done
