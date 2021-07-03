@@ -14,29 +14,31 @@ Locker="slock"						# Put your screen locker utility there. In my case it is slo
 
 usage() { echo "Usage: $0 [-l <lock screen>] [-e <logout>] [-s <suspend>] [-h <hibernate>] [-r <reboot>] [-S <shutdown>]" 1>&2; exit 1; }
 
-while getopts ":l:e:s:h:r:S:" o; do
+while getopts ":leshrS" o; do
 	case "${o}" in
 		l)
 			l=${OPTARG}
 			$Locker
 			;;
 		e)
-			e=$Locker
+			e=${OPTARG}
+			$Locker
 			;;
 		s)
-			s=$Locker
+			s=${OPTARG}
+			$Locker
 			;;
 		h)
-			h=$Locker
+			h=${OPTARG}
+			$Locker
 			;;
 		r)
-			r=$Locker
+			r=${OPTARG}
+			$Locker
 			;;
 		S)
-			S=$Locker
-			;;
-		*)
-			usage
+			S=${OPTARG}
+			$Locker
 			;;
 	esac
 done
