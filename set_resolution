@@ -1,0 +1,6 @@
+#!/bin/sh
+
+Display=Virtual1
+Resolution=1920x1080
+
+xrandr --output $Display --mode $Resolution
