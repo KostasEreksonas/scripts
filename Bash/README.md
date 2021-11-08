@@ -1,13 +1,16 @@
+# Bash scripts
+
+In this folder I store Bash scripts that I made.
+
 Table of Contents
 =================
-* [Scripts](#Scripts)
-* [Script list](#Script-list)
+* [Bash Scripts](#Bash-Scripts)
+* [Script List](#Script-List)
 
-# Scripts
-In this repository I will store various scripts that I made for my Linux install.
+# Script List
 
-# Script list
-The scripts that I made are:
+The scripts are as follows:
+
 * [Battery percentage](../main/battery_percentage) - a script for showing battery percentage.
 * [Take screenshot](../main/screenshot) - a very simple script, taken from my i3wm config, for taking screenshots with PrintScreen key.
 * [Save screenshot to clipboard](../main/screenshot_clipboard) - a simple script, taken from my i3wm config, for copying selected portion of screen to clipboard.
