@@ -18,3 +18,4 @@ The scripts are as follows:
 * [Locker menu](../Bash/locker_menu) - a script to lock, suspend or hibernate a screen and reboot or shutdown a computer.
 * [Locker](../Bash/locker) - same as ***[Locker menu](../Bash/locker_menu)*** script, just with some getopts command line flags added.
 * [Locker Gentoo](../Bash/locker_gentoo) - locker script, adapted to my Gentoo Linux install with OpenRC.
+* [Check Process](../Bash/check_process) - input a name of a program and see what processes with that name are running.
