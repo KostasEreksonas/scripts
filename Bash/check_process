@@ -1,5 +1,10 @@
 #!/bin/sh
 
-read -p "Name process to show: " process
+read -p "Name process to show: " name
 
-ps -ef | grep $process
+running=$(ps -ef | grep $name)
+count=$(ps -ef | grep $name | wc -l)
+
+printf "Processes:\n"
+printf "\n$running\n"
+printf "\nProcess count: $count\n"
