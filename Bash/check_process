@@ -1,0 +1,5 @@
+#!/bin/sh
+
+read -p "Name process to show: " process
+
+ps -ef | grep $process
