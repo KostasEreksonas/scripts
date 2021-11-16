@@ -1,0 +1,12 @@
+#!/bin/sh
+
+read -p "Name of the first file: " file1
+read -p "Name of the second file: " file2
+read -p "Output file: " file3
+
+cat $file1 $file2 >> $file3
+
+result=$(cat $file3)
+
+printf "Files concatenated. Result:\n"
+printf "$result\n"
