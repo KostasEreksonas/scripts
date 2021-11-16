@@ -19,4 +19,5 @@ The scripts are as follows:
 * [Paste to clipboard](../Bash/paste_clipboard) - a simple script, taken from my i3wm config, for pasting contents of a clipboard to a predefined folder.
 * [Take screenshot](../Bash/screenshot) - a very simple script, taken from my i3wm config, for taking screenshots with PrintScreen key.
 * [Save screenshot to clipboard](../Bash/screenshot_clipboard) - a simple script, taken from my i3wm config, for copying selected portion of screen to clipboard.
+* [Search pattern](../Bash/search_pattern) - search for given patterns in a given file.
 * [Set resolution](../Bash/set_resolution) - set resolution of the display using Xrandr.
