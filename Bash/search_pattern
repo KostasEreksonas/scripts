@@ -1,0 +1,8 @@
+#!/bin/sh
+
+read -p "What file to search patterns for: " file
+read -p "What to search for: " search
+
+result=$(grep $search $file)
+
+printf "$result\n"
