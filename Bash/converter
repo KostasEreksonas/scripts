@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "Enter input file name"
+read INPUT
+echo "Input is $INPUT"
+
+echo "Enter preset"
+read PRESET
+echo "Preset is $PRESET"
+
+echo "Enter crf value"
+read CRF
+echo "CRF value is $CRF"
+
+echo "Enter output file name"
+read OUTPUT
+echo "Output is $OUTPUT"
+
+ffmpeg -i $INPUT -c:a copy -c:v libx264 -preset $PRESET -crf $CRF $OUTPUT
