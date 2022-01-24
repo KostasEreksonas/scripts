@@ -5,6 +5,6 @@ read -p "Name process to show: " name
 running=$(ps -ef | grep $name)
 count=$(ps -ef | grep $name | wc -l)
 
-printf "\nProcesses:\n"
-printf "$running\n"
+printf "Processes:\n"
+printf "\n$running\n"
 printf "\nProcess count: $count\n"

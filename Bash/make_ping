@@ -1,0 +1,6 @@
+#!/bin/sh
+
+read -p "Ping count: " count
+read -p "Site to ping: " site
+
+ping -c $count $site
