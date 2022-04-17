@@ -3,6 +3,11 @@
 # Grab volume percentage value from amixer
 vol="$(pamixer --get-volume)"
 
+case $BUTTON in
+	1) notify-send "Volume: " "$vol%" ;;
+	3) pavucontrol ;;
+esac
+
 # Display sound icon depending on volume
 if [ "$vol" -gt "75" ]; then
 	icon="墳"
@@ -11,7 +16,7 @@ elif [ "$vol" -gt "35" ]; then
 elif [ "$vol" -gt "0" ]; then
 	icon="奄"
 else
-	echo ﱝ && exit
+	echo "ﱝ  0%" && exit
 fi
 
 # Output icon and volume
