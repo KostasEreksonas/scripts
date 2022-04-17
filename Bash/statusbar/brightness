@@ -11,7 +11,7 @@ elif [ "$brightness" -gt "35" ]; then
 elif [ "$brightness" -gt "0" ]; then
         icon=""
 else
-        echo  && exit
+        echo " $brightness" && exit
 fi
 
 # Define mouse controls
