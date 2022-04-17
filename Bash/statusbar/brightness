@@ -14,5 +14,13 @@ else
         echo  && exit
 fi
 
+# Define mouse controls
+case $BUTTON in
+        # Left-click shows a notification with brightness level
+        1) notify-send "Brightness: " "$icon" "$brightness%" ;;
+        # Right-click shows a notification with brightness level
+        3) notify-send "Brightness: " "$icon" "$brightness%" ;;
+esac
+
 # Output icon and brightness
 echo "$icon $brightness%"
