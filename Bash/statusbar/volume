@@ -3,8 +3,11 @@
 # Grab volume percentage value from amixer
 vol="$(pamixer --get-volume)"
 
+# Define mouse controls
 case $BUTTON in
+	# Left-click shows a notification with volume level
 	1) notify-send "Volume: " "$vol%" ;;
+	# Right-click opens pavucontrol instance
 	3) pavucontrol ;;
 esac
 
