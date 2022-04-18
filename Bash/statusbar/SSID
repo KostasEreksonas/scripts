@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Get network name
+SSID="$(iw dev wlp3s0 link | awk '/SSID/ {print $2}')"
+
+# Wifi network icon
+icon=
+
+# Print icon and netowrk name
+echo "$icon $SSID"
