@@ -6,5 +6,11 @@ SSID="$(iw dev wlp3s0 link | awk '/SSID/ {print $2}')"
 # Wifi network icon
 icon=
 
+# Define mouse controls
+case $BUTTON in
+	# Left-click shows notfication with the name of the network
+	1) notify-send "Network SSID: " " $icon $SSID" ;;
+esac
+
 # Print icon and netowrk name
 echo "$icon $SSID"
