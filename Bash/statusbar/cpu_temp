@@ -8,10 +8,10 @@ icon=糖
 
 # Define mouse controls
 case $BUTTON in
-	# Left-click shows a notification with CPU temperature
-	1) notify-send "CPU temperature: " "$icon$temp" ;;
-	# Right-click opens a terminal instance with sensors
-	3) setsid -f "$TERMINAL" -e sensors ;;
+	# Left-click opens a terminal instance with sensors
+	1) setsid -f "$TERMINAL" -e sensors ;;
+	# Right-click shows a notification with CPU temperature
+	3) notify-send "CPU temperature: " "$icon$temp" ;;
 esac
 
 # Show icon and temperature value

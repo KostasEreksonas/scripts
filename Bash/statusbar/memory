@@ -5,8 +5,8 @@ icon=
 
 #Define mouse controls
 case $BUTTON in
-	# Left-click shows a notification with memory level
-	1) notify-send "Memory: " "$icon $memory" ;;
+	# Right-click shows a notification with memory level
+	3) notify-send "Memory: " "$icon $memory" ;;
 esac
 
 # Output icon and memory stats

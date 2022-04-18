@@ -8,8 +8,8 @@ icon=
 
 # Define mouse controls
 case $BUTTON in
-	# Left-click shows notfication with the name of the network
-	1) notify-send "Network SSID: " " $icon $SSID" ;;
+	# Right-click shows notfication with the name of the network
+	3) notify-send "Network SSID: " " $icon $SSID" ;;
 esac
 
 # Print icon and netowrk name
