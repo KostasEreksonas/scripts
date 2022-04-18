@@ -11,7 +11,7 @@ case $BUTTON in
 	# Left-click creates a notification with cpu usage percentage
 	1) notify-send "CPU usage: " "$icon $usage%" ;;
 	# Right-click opens a terminal instance running htop
-	3) setsid -f "$TERM" -e htop ;;
+	3) setsid -f "$TERMINAL" -e htop ;;
 esac
 
 echo "$icon $usage%"
