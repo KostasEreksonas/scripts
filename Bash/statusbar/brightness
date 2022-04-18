@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Get brightness value
 brightness="$(xbacklight -get | awk -F. '{print $1}')"
@@ -17,7 +17,7 @@ elif [ "$brightness" -gt "35" ]; then
 elif [ "$brightness" -gt "0" ]; then
         icon=""
 else
-        echo " $brightness" && exit
+        echo " $brightness%" && exit
 fi
 
 # Output icon and brightness
