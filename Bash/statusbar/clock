@@ -1,3 +1,13 @@
 #!/bin/bash
 
-date '+%b %d (%a) %I:%M%p'
+Time="$(date '+%b %d (%a) %I:%M%p')"
+
+# Define mouse controls
+case $BUTTON in
+	# Left-click shows a notification with current time
+	1) notify-send "Current time: " "$Time" ;;
+	# Right-click opens an instance of gsimplecal
+	3) gsimplecal ;;
+esac
+
+echo $Time
