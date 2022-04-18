@@ -13,15 +13,15 @@ esac
 
 # Display sound icon depending on volume
 if [ "$charge" -gt "75" ]; then
-        icon="  "
+        icon=" "
 elif [ "$charge" -gt "50" ]; then
-        icon="  "
+        icon=" "
 elif [ "$charge" -gt "25" ]; then
-        icon="  "
+        icon=" "
 elif [ "$charge" -gt "0" ]; then
-        icon="  "
+        icon=" "
 else
         echo "  0%" && exit
 fi
 
-echo "$stat $charge%"
+echo "$icon $stat $charge%"
