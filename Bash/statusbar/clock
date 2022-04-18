@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 time="$(date '+%b %d (%a) %I:%M%p')"
 icon=
