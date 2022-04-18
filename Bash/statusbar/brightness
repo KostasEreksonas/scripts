@@ -3,6 +3,12 @@
 # Get brightness value
 brightness="$(xbacklight -get | awk -F. '{print $1}')"
 
+# Define mouse controls
+case $BUTTON in
+        # Left-click shows a notification with brightness level
+        1) notify-send "Brightness: " "$brightness%" ;;
+esac
+
 # Display brightness icon depending on brightness level
 if [ "$brightness" -gt "75" ]; then
         icon=""
@@ -13,14 +19,6 @@ elif [ "$brightness" -gt "0" ]; then
 else
         echo " $brightness" && exit
 fi
-
-# Define mouse controls
-case $BUTTON in
-        # Left-click shows a notification with brightness level
-        1) notify-send "Brightness: " "$icon" "$brightness%" ;;
-        # Right-click shows a notification with brightness level
-        3) notify-send "Brightness: " "$icon" "$brightness%" ;;
-esac
 
 # Output icon and brightness
 echo "$icon $brightness%"
