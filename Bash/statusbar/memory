@@ -1,6 +1,7 @@
 #!/bin/bash
 
 memory="$(free -h | awk '/^Mem/ {print $3"/"$2}' | sed s/i//g)"
+icon=
 
 #Define mouse controls
 case $BUTTON in
@@ -9,4 +10,4 @@ case $BUTTON in
 esac
 
 # Output icon and memory stats
-echo "$memory"
+echo "$icon $memory"
