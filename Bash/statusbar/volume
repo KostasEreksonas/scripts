@@ -5,10 +5,10 @@ vol="$(pamixer --get-volume)"
 
 # Define mouse controls
 case $BUTTON in
-	# Left-click shows a notification with volume level
-	1) notify-send "Volume: " "墳 $vol%" ;;
-	# Right-click opens pavucontrol instance
-	3) pavucontrol ;;
+	# Left-click opens pavucontrol instance
+	1) pavucontrol ;;
+	# Right-click shows a notification with volume level
+	3) notify-send "Volume: " "墳 $vol%" ;;
 esac
 
 # Display sound icon depending on volume

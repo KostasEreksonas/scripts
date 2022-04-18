@@ -8,10 +8,10 @@ icon=
 
 # Define mouse controls
 case $BUTTON in
-	# Left-click creates a notification with cpu usage percentage
-	1) notify-send "CPU usage: " "$icon $usage%" ;;
-	# Right-click opens a terminal instance running htop
-	3) setsid -f "$TERMINAL" -e htop ;;
+	# Left-click opens a terminal instance running htop
+	1) setsid -f "$TERMINAL" -e htop ;;
+	# Right-click creates a notification with cpu usage percentage
+	3) notify-send "CPU usage: " "$icon $usage%" ;;
 esac
 
 echo "$icon $usage%"
