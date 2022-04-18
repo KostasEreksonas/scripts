@@ -6,7 +6,7 @@ brightness="$(xbacklight -get | awk -F. '{print $1}')"
 # Define mouse controls
 case $BUTTON in
         # Left-click shows a notification with brightness level
-        1) notify-send "Brightness: " "$icon $brightness%" ;;
+        1) notify-send "Brightness: " " $brightness%" ;;
 esac
 
 # Display brightness icon depending on brightness level
