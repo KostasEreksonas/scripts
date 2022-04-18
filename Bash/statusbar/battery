@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Read battery charge level
+charge="$(acpi | awk '{print $4}' | tr -d "%")"
+
+# Read battery status
+stat="$(acpi | awk '{print $3}' | tr -d ",")"
+
+case $BUTTON in
+	# Left-click creates a notification about battery status and chrarge level
+	1) notify-send "Battery: " "$stat $charge%" ;;
+esac
+
+# Display sound icon depending on volume
+if [ "$charge" -gt "75" ]; then
+        icon="  "
+elif [ "$charge" -gt "50" ]; then
+        icon="  "
+elif [ "$charge" -gt "25" ]; then
+        icon="  "
+elif [ "$charge" -gt "0" ]; then
+        icon="  "
+else
+        echo "  0%" && exit
+fi
+
+echo "$stat $charge%"
