@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get brightness value
 brightness="$(xbacklight -get | awk -F. '{print $1}')"
