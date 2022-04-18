@@ -15,4 +15,4 @@ case $BUTTON in
 esac
 
 # Show icon and temperature value
-echo "$icon$temp"
+echo "$icon $temp"
