@@ -20,7 +20,7 @@ case $BUTTON in
 	# Left-click opens a terminal instance with sensors
 	1) setsid -f "$TERMINAL" -e watch sensors ;;
 	# Right-click shows a notification with CPU temperature
-	3) notify-send "CPU temperature " "Package: $package\n$notification" ;;
+	3) notify-send "CPU temperature" "Package: $package\n$notification" ;;
 esac
 
 # Show icon and CPU package temperature
