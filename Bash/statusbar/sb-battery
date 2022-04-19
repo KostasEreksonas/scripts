@@ -26,5 +26,5 @@ else
         echo "  0%" && exit
 fi
 
-#kill -43 $(pidof dwmblocks)
+# Display icon, battery status and charge percentage
 echo "$icon $stat $charge%"
