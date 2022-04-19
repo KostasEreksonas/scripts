@@ -1,10 +1,17 @@
 #!/bin/sh
 
-# Grab each processor's frequency
-core1="$(grep MHz /proc/cpuinfo | awk 'NR == 1 {print $4}' | cut -d "." -f 1)"
-core2="$(grep MHz /proc/cpuinfo | awk 'NR == 2 {print $4}' | cut -d "." -f 1)"
-core3="$(grep MHz /proc/cpuinfo | awk 'NR == 3 {print $4}' | cut -d "." -f 1)"
-core4="$(grep MHz /proc/cpuinfo | awk 'NR == 4 {print $4}' | cut -d "." -f 1)"
+# Get CPU count
+cpuCount="$(grep processor /proc/cpuinfo | wc -l)"
+
+# Counter for creating variables to store all CPU's frequencies
+c=1
+
+# Get frequencies for all found cores
+for (( core = 1; core <= $cpuCount; core++ ))
+do
+	eval "Core$c="$(grep MHz /proc/cpuinfo | awk -v a=$core 'NR == a {print $4}' | cut -d "." -f 1)"";
+	c=$((c+1));
+done
 
 # Display icon
 icon=
@@ -13,9 +20,9 @@ icon=
 case $BUTTON in
 	# Left-click opens up a terminal showing frequency of all cores
 	1) setsid -f "$TERMINAL" -e watch grep MHz /proc/cpuinfo ;;
-	# Right-click shows a notification with all the found cpu's frequencies
-	3) notify-send "Frequency" "CPU0: $core1\nCPU1: $core2\nCPU2: $core3\nCPU3: $core4"
+	# Right-click shows a notification with all the found CPU's frequencies
+	3) notify-send "Frequency" "CPU0: $Core1\nCPU1: $Core2\nCPU2: $Core3\nCPU3: $Core4"
 esac
 
 # Display CPU icon and frequency
-echo "$icon $core1 MHz"
+echo "$icon $Core1 MHz"
