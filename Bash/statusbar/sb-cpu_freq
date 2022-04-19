@@ -1,19 +1,15 @@
 #!/bin/sh
 
 # Get CPU count
-cpuCount="$(grep processor /proc/cpuinfo | wc -l)"
+coreCount="$(grep processor /proc/cpuinfo | wc -l)"
 
 # Counter for creating variables to store all CPU's frequencies
-c=1
+counter=1
 
-# Get frequencies for all found cores
-for (( core = 1; core <= $cpuCount; core++ ))
-do
-	eval "Core$c="$(grep MHz /proc/cpuinfo | awk -v a=$core 'NR == a {print $4}' | cut -d "." -f 1)"";
-	c=$((c+1));
-done
+# Get frequencies of all found cores for notification
+notification="$(for (( core = 1; core <= $coreCount; core++ )); do eval "echo "Core $counter: "$(grep MHz /proc/cpuinfo | awk -v var=$core 'NR == var {print $4}' | cut -d "." -f 1)"" MHz"; counter=$((counter+1)); done)"
 
-# Display icon
+# Icon to display
 icon=
 
 # Define mouse controls
@@ -21,8 +17,11 @@ case $BUTTON in
 	# Left-click opens up a terminal showing frequency of all cores
 	1) setsid -f "$TERMINAL" -e watch grep MHz /proc/cpuinfo ;;
 	# Right-click shows a notification with all the found CPU's frequencies
-	3) notify-send "Frequency" "CPU0: $Core1\nCPU1: $Core2\nCPU2: $Core3\nCPU3: $Core4"
+	3) notify-send "Frequency" "$notification"
 esac
 
-# Display CPU icon and frequency
-echo "$icon $Core1 MHz"
+# Get frequency of first core
+frequency="$(grep MHz /proc/cpuinfo | awk 'NR == 1 {print $4}' | cut -d "." -f 1)"
+
+# Display CPU icon and frequency of first core
+echo "$icon $frequency MHz"
