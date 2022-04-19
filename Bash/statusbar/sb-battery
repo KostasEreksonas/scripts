@@ -7,6 +7,8 @@ charge="$(acpi | awk '{print $4}' | tr -d "%" | tr -d ",")"
 stat="$(acpi | awk '{print $3}' | tr -d ",")"
 
 case $BUTTON in
+	# Left-click opens a terminal instance with advanced battery statistics
+	1) setsid -f "$TERMINAL" -e watch acpi ;;
 	# Right-click creates a notification about battery status and chrarge level
 	3) notify-send "Battery: " "  $stat $charge%" ;;
 esac
@@ -24,4 +26,5 @@ else
         echo "  0%" && exit
 fi
 
+#kill -43 $(pidof dwmblocks)
 echo "$icon $stat $charge%"
