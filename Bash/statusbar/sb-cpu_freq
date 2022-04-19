@@ -14,7 +14,7 @@ case $BUTTON in
 	# Left-click opens up a terminal showing frequency of all cores
 	1) setsid -f "$TERMINAL" -e watch grep MHz /proc/cpuinfo ;;
 	# Right-click shows a notification with all the found cpu's frequencies
-	3) notify-send "Frequency" "CPU0:$core1\nCPU1:$core2\nCPU2:$core3\nCPU3:$core4"
+	3) notify-send "Frequency" "CPU0: $core1\nCPU1: $core2\nCPU2: $core3\nCPU3: $core4"
 esac
 
 # Display CPU icon and frequency
