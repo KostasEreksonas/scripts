@@ -1,6 +1,9 @@
 #!/bin/bash
 
+# Read current time
 time="$(date '+%b %d (%a) %I:%M%p')"
+
+# Calendar icon
 icon=
 
 # Define mouse controls
@@ -11,4 +14,5 @@ case $BUTTON in
 	3) notify-send "Current time: " "$icon $time" ;;
 esac
 
+# Show calendar icon and current time
 echo "$icon $time"
