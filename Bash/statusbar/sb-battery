@@ -10,7 +10,7 @@ case $BUTTON in
 	# Left-click opens a terminal instance with advanced battery statistics
 	1) setsid -f "$TERMINAL" -e watch acpi ;;
 	# Right-click creates a notification about battery status and chrarge level
-	3) notify-send "Battery: " "  $stat $charge%" ;;
+	3) notify-send "Battery" "  $stat $charge%" ;;
 esac
 
 # Display sound icon depending on volume

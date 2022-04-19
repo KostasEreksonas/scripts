@@ -9,7 +9,7 @@ icon=
 # Define mouse controls
 case $BUTTON in
 	# Right-click shows notfication with the name of the network
-	3) notify-send "Network SSID: " " $icon $SSID" ;;
+	3) notify-send "Network SSID" " $icon $SSID" ;;
 esac
 
 # Print icon and netowrk name

@@ -11,7 +11,7 @@ case $BUTTON in
 	# Left-click opens an instance of gsimplecal
 	1) gsimplecal ;;
 	# Right-click shows a notification with current time
-	3) notify-send "Current time: " "$icon $time" ;;
+	3) notify-send "Current time" "$icon $time" ;;
 esac
 
 # Show calendar icon and current time

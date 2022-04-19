@@ -8,7 +8,7 @@ case $BUTTON in
 	# Left-click opens pavucontrol instance
 	1) pavucontrol ;;
 	# Right-click shows a notification with volume level
-	3) notify-send "Volume: " "墳 $vol%" ;;
+	3) notify-send "Volume" "墳 $vol%" ;;
 esac
 
 # Display sound icon depending on volume
