@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Define icon
+icon=
+
+# Get UP network interface
+interface="$(ip addr | grep "state UP" | awk '{print $2}' | cut -d ":" -f 1)"
+
+# Get IP address
+IP="$(ip a | grep $interface | awk 'NR == 2 {print $2}' | cut -d "/" -f 1)"
+
+# Display icon and IP address
+echo "$icon $IP"
