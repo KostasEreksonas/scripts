@@ -17,7 +17,7 @@ case $BUTTON in
         # Left-click opens a terminal instance showing network interface info
         1) setsid -f "$TERMINAL" -e watch ip a ;;
         # Right-click shows notfication with the name of the network
-        3) notify-send "Network details" "Network name: $SSID\nIP address: $IP" ;;
+        3) notify-send "Network details" "Network name: $SSID\nIP address: $IP\nInterface: $interface" ;;
 esac
 
 # Print icon and netowrk name
