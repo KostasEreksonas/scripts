@@ -1,14 +1,16 @@
 #!/bin/sh
 
 # Read battery charge level
-charge="$(acpi | awk '{print $4}' | tr -d "%" | tr -d ",")"
+#charge="$(acpi | awk '{print $4}' | tr -d "%" | tr -d ",")"
+charge="$(cat /sys/class/power_supply/BAT[0-9]/capacity)"
 
 # Read battery status
-stat="$(acpi | awk '{print $3}' | tr -d ",")"
+#stat="$(acpi | awk '{print $3}' | tr -d ",")"
+stat="$(cat /sys/class/power_supply/BAT[0-9]/capacity_level)"
 
 case $BUTTON in
 	# Left-click opens a terminal instance with advanced battery statistics
-	1) setsid -f "$TERMINAL" -e watch acpi ;;
+	1) setsid -f "$TERMINAL" -e watch $charge ;;
 	# Right-click creates a notification about battery status and chrarge level
 	3) notify-send "Battery" "  $stat $charge%" ;;
 esac
