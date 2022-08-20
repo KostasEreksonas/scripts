@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Get primary display
-primary=$(xrandr | grep -w primary | cut -d " " -f 1);
+primary=$(xrandr | grep -w primary | cut -d " " -f 1)
 
 # Get secondary display
 secondary=$(xrandr | grep -w connected | grep -wv primary | cut -d " " -f 1)
