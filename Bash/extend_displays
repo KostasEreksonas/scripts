@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Get primary display
+primary=$(xrandr | grep -w primary | cut -d " " -f 1);
+
+# Get secondary display
+secondary=$(xrandr | grep -w connected | grep -wv primary | cut -d " " -f 1)
+
+printf "\n# Extend displays on WM startup\n" >> ~/.xprofile
+printf "xrandr --output $primary --auto --output $secondary --right-of $primary --auto\n" >> ~/.xprofile
