@@ -1,0 +1,10 @@
+#!/bin/sh
+
+coordinates=$(exiftool $1 | grep GPS\ L | grep deg | sed 's/deg/°/g' | sed 's/^[^:]*: //g' | sed 's/ //g' | tr "\n" " ")
+
+# If no filename is provided, display this error
+if [ -z "$1" ]; then
+	printf "Usage: getCoordinates <filename>"
+fi
+
+printf $coordinates'\n'
