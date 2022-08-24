@@ -5,6 +5,8 @@ coordinates=$(exiftool $1 | grep GPS\ L | grep deg | sed 's/deg/°/g' | sed 's/^
 # If no filename is provided, display this error
 if [ -z "$1" ]; then
 	printf "Usage: getCoordinates <filename>"
+elif [-z "$coordinates" ]; then
+	printf "No coordinates found.\n"
+else
+	printf $coordinates'\n'
 fi
-
-printf $coordinates'\n'
