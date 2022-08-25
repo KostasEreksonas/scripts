@@ -12,6 +12,7 @@ Table of Contents
 The scripts are as follows:
 
 * [Battery percentage](../Bash/battery_percentage) - a script for showing battery percentage.
+* [Check empty box](../Bash/check_empty_box) - a script for testing an error if a dialog box is empty.
 * [Check process](../Bash/check_process) - input a name of a program and see what processes with that name are running.
 * [Concatenate files](../Bash/concatenate_files) - simple script to concatenate two files
 * [Converter](../Bash/converter) - basic script for video file conversion using ffmpeg
