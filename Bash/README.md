@@ -1,10 +1,9 @@
 # Bash scripts
 
-In this folder I store Bash scripts that I made.
+Various shell scripts that I made for my Arch Linux install.
 
 Table of Contents
 =================
-* [Bash Scripts](#Bash-Scripts)
 * [Script List](#Script-List)
 
 # Script List
