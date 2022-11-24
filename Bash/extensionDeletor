@@ -1,0 +1,5 @@
+#!/bin/sh
+
+read -p "Enter extension to delete: " extension
+
+find . -maxdepth 1 -type f -name '*.'$extension'' -print0 | while read -d $'\0' f; do mv "$f" "${f%.$extension}"; done
