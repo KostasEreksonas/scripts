@@ -2,7 +2,7 @@
 
 printf "1) LRT Televizija\n2) LRT Plius\n3) LRT Lituanica\n"
 
-read -p "Which channel to watch? " choice
+read -p "Choose a channel to watch: " choice
 
 case $choice in
 	1)
