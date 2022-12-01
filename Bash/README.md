@@ -15,6 +15,7 @@ The scripts are as follows:
 * [Check Process](../Bash/check_process) - input a name of a program and see what processes with that name are running.
 * [Concatenate Files](../Bash/concatenate_files) - simple script to concatenate two files.
 * [Converter](../Bash/converter) - basic script for video file conversion using ffmpeg.
+* [Cpu Info](../Bash/cpu-info) - format and display cpu details from /proc/cpuinfo.
 * [Extend Displays](../Bash/extend_displays) - ncurses-based dialog menu for configuring multiple displays.
 * [Extension Deletor](../Bash/extensionDeletor) - delete given file extensions.
 * [Get Coordinates](../Bash/getCoordinates) - get location coordinates from an image using exiftool.
