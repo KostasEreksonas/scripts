@@ -1,7 +1,17 @@
 #!/bin/sh
 
+function model() {
+	count=$(grep model\ name /proc/cpuinfo | head -1 | wc -w);
+	for (( i = 3; i < $count; i++ )); do
+		name=$(grep model\ name /proc/cpuinfo | head -1 | cut -d " " -f $i)
+		printf "$name ";
+	done
+	printf "\n"
+}
+
 function flags() {
-	for (( i = 2; i < $1; i++ )); do
+	flagcount=$(grep flags /proc/cpuinfo | head -1 | wc -w)
+	for (( i = 2; i < $flagcount; i++ )); do
 		flag=$(grep flags /proc/cpuinfo | head -1 | cut -d " " -f $i)
 		printf "\t$flag\n"
 	done
@@ -11,11 +21,11 @@ count=$(grep processor /proc/cpuinfo | wc -l)
 cache=$(grep cache\ size /proc/cpuinfo | cut -d " " -f 3 | head -1)
 id=$(grep vendor_id /proc/cpuinfo | cut -d " " -f 2 | head -1)
 frequencies="$(for (( core = 1; core <= $count; core++ )); do counter=$((counter+1)); eval "echo "Core $counter frequency: "$(grep MHz /proc/cpuinfo | awk -v var=$core 'NR == var {printf "%.2f", $4/1000}')"" GHz"; done)"
-flagcount=$(grep flags /proc/cpuinfo | head -1 | wc -w)
 
-printf "Thread count: $count\n\
+printf "CPU model: $(model)\n\
+Thread count: $count\n\
 Cache size: $cache KB\n\
 Vendor ID: $id\n\
 $frequencies\n\
 CPU flags:\n\
-$(flags $flagcount)\n"
+$(flags)\n"
