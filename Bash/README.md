@@ -18,6 +18,7 @@ The scripts are as follows:
 * [Cpu Info](../Bash/cpu-info) - format and display cpu details from /proc/cpuinfo.
 * [Extend Displays](../Bash/extend_displays) - ncurses-based dialog menu for configuring multiple displays.
 * [Extension Deletor](../Bash/extensionDeletor) - delete given file extensions.
+* [Flags](../Bash/flags) - get CPU flags from /proc/cpuinfo.
 * [Get Coordinates](../Bash/getCoordinates) - get location coordinates from an image using exiftool.
 * [Locker](../Bash/locker) - same as ***[Locker menu](../Bash/locker_menu)*** script, just with some getopts command line flags added.
 * [Locker Gentoo](../Bash/locker_gentoo) - locker script, adapted to my Gentoo Linux install with OpenRC.
