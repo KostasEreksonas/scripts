@@ -1,0 +1,13 @@
+#!/bin/sh
+
+function flags() {
+for (( i = 2; i < $wordcount; i++ )); do
+	word=$(grep flags /proc/cpuinfo | head -1 | cut -d " " -f $i)
+	printf "\t$word\n"
+done
+}
+
+wordcount=$(grep flags /proc/cpuinfo | head -1 | wc -w)
+
+printf "CPU Flags:\n\
+$(flags)\n"
