@@ -11,23 +11,36 @@ function model() {
 
 function flags() {
 	flagcount=$(grep flags /proc/cpuinfo | head -1 | wc -w)
+	printf "\t"
 	for (( i = 2; i < $flagcount; i++ )); do
 		flag=$(grep flags /proc/cpuinfo | head -1 | cut -d " " -f $i)
-		printf "\t$flag\n"
+		printf "$flag "
 	done
 }
 
-count=$(grep processor /proc/cpuinfo | wc -l)
+function frequencies() {
+	for (( core = 1; core <= $1; core++ )); do
+		counter=$((counter+1))
+		eval "echo "Thread $counter frequency: \
+			"$(grep MHz /proc/cpuinfo | \
+			awk -v var=$core 'NR == var {printf "%.2f", $4/1000}')"" GHz"
+	done
+}
+
+cores=$(grep cores /proc/cpuinfo | head -1 | cut -d " " -f 3)
+threads=$(grep processor /proc/cpuinfo | wc -l)
 cache=$(grep cache\ size /proc/cpuinfo | cut -d " " -f 3 | head -1)
 id=$(grep vendor_id /proc/cpuinfo | cut -d " " -f 2 | head -1)
 stepping=$(grep stepping /proc/cpuinfo | head -1 | cut -d " " -f 2)
-frequencies="$(for (( core = 1; core <= $count; core++ )); do counter=$((counter+1)); eval "echo "Core $counter frequency: "$(grep MHz /proc/cpuinfo | awk -v var=$core 'NR == var {printf "%.2f", $4/1000}')"" GHz"; done)"
+family=$(grep family /proc/cpuinfo | head -1 | cut -d " " -f 3)
 
 printf "CPU model: $(model)\n\
-Thread count: $count\n\
+CPU family: $family\n\
+Core count: $cores\n\
+Thread count: $threads\n\
 Cache size: $cache KB\n\
 Vendor ID: $id\n\
 Stepping: $stepping\n\
-$frequencies\n\
+$(frequencies $threads)\n\
 CPU flags:\n\
 $(flags)\n"
