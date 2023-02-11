@@ -5,4 +5,4 @@ num2 = input("Enter number 2: ")
 
 modulo = int(num1) % int(num2)
 
-print("Leftover of the division is", modulo)
+print(f"Leftover of the division is {modulo}")
