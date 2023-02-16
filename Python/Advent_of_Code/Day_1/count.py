@@ -11,5 +11,5 @@ for i in range(len(value_array)):
     if value_array[i] > value_array[i-1]:
         count += 1
 
-print("The result is:",count)
+print(f"The result is: {count}")
 values.close()
