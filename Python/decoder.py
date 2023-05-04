@@ -1,4 +1,4 @@
-#!/usr/share/bin python3
+#!/usr/bin/env python3
 
 import re
 import base64
