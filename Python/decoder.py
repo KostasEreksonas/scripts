@@ -14,12 +14,12 @@ def decode(string, pattern, match):
         else:
             clean = re.sub(r'\(.+\)', '', url)
             string = clean
-        return result
+    return result
 
 def main():
     string = input("Enter base64 encoded string: ")
     pattern=r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" # Pattern to match URL
-    decode(string, pattern, None)
+    print(f"URL: {decode(string, pattern, None)}")
 
 if __name__=="__main__":
     main()
