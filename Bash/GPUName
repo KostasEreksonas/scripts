@@ -1,0 +1,3 @@
+#!/bin/sh
+
+name=$(dialog --stdout --title "GPU Board Name" --inputbox "Enter the name of your GPU: " 0 0) && sed "s/Name/$name/g" 20-nvidia.conf
