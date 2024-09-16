@@ -1,6 +1,6 @@
 # Scripts
 
-A dump of old and half-finished scripts that are not used anymore
+A dump of old and half-finished scripts and configs that are not used anymore
 
 Table of Contents
 =================
@@ -11,12 +11,12 @@ Table of Contents
 
 # Bash
 
-Bash scripts are stored [here](Bash/README.md)
+Bash scripts are stored [here](https://github.com/KostasEreksonas/scripts/tree/main/Bash)
 
 # Python
 
-Python scripts are stored [here](Python/README.md)
+Python scripts are stored [here](https://github.com/KostasEreksonas/scripts/tree/main/Python)
 
 # Unused configs
 
-Unused configs are stored [here](Unused_configs/README.md)
+Unused configs are stored [here](https://github.com/KostasEreksonas/scripts/tree/main/Unused_configs)
