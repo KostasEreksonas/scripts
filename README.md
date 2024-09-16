@@ -1,6 +1,6 @@
 # Scripts
 
-The repository of scripts that I made with Bash and Python. Most of these scripts I made for my Linux installs.
+A dump of old and half-finished scripts that are not used anymore
 
 Table of Contents
 =================
