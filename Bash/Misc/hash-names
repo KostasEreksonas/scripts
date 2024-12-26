@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Convert filenames (without extension) to md5 hash (for all files in a given directory)
+
+for f in *; do
+	length="$(echo "${f%%.*}" | wc -c)"
+	if [[ "${length}" -ne 33 ]]; then
+		new_name="$(echo "${f%%.*}" | md5sum | cut -d " " -f 1)"
+		printf "${f} => ${new_name}.${f##*.}\n"
+		mv "${f}" "${new_name}.${f##*.}"
+	fi
+done
