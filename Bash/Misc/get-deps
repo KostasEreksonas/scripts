@@ -65,7 +65,7 @@ done <<< $(pacman -Qi ${1})
 
 # Print packages that are installed
 printf 'Packages installed: '
-printf '%s ' "${installed[@]}"
+printf '%s\n' "${installed[@]}"
 printf "\n"
 
 # If all optional dependencies are installed, print a message and finish execution
@@ -74,7 +74,7 @@ if [[ -z ${missing[@]} ]]; then
 elif [ -z ${choice} ]; then
 	# Print packages that are not installed
 	printf 'Packages not yet installed: '
-	printf '%s ' "${missing[@]}"
+	printf '%s\n' "${missing[@]}"
 	printf "\n"
 	# Ask to install missing optional dependecies
 	while true; do
