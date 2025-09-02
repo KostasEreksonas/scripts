@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Update the system
+sudo apt update
+
+# Upgrade the system
+sudo apt upgrade -y
+
+# Install git
+sudo apt install -y git
+
+# Install dependencies for ns-3
+sudo apt install -y cmake openmpi-bin openmpi-common openmpi-doc libopenmpi-dev
+
+# Install dependencies for QKDNetSim
+sudo apt install -y libcrypto++-dev libcrypto++-doc libcrypto++-utils gnuplot uuid-dev
+
+# Create directory to clone QKDNetSim repo
+dir=${HOME}/Documents/git/
+if [ ! -d "${dir}" ]; then mkdir -p ${dir}; fi
+cd ${dir}
+
+# Clone QKDNetSim
+if [! -d ${dir}/qkdnetsim-v2/ ]; then git clone https://github.com/QKDNetSim/qkdnetsim-v2.git; fi
+cd qkdnetsim-v2/
+
+# Configure ns3
+./ns3 configure --enable-mpi
+./ns3
+
+# Run test script
+./ns3 run scratch/qkd_etsi_014.cc
