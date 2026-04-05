@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Input a hex string (in quotes), so that:
+# 	1. Spaces could be removed.
+# 	2. Letters could be turned into lowercase.
+# 	3. Output saved into a clipboard.
+if ! which xclip 1>/dev/null; then
+	printf "Xclip not found\n"
+elif [[ -z "${1}" ]]; then
+	printf "Usage: ./hex_postprocess \"<hex-string>\"\n"
+else
+	echo "${1}" | sed 's/ //g' | tr '[:upper:]' '[:lower:]' | tr -d '\n' | xclip -selection clipboard
+fi
